@@ -14,7 +14,7 @@
   <script src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php" type="text/javascript"></script>
   <div id="content">
     <div id="header"><img src="header.png" /></div>
-    <div id="login"><div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div></div>
+    <div id="login"><fb:login-button id="loginbutton"></fb:login-button></div>
     <div id="controls" style="display: none;">
       <div id="search">
         <input id="searchbox" type="search" results="5"/>
@@ -49,16 +49,5 @@
                          login,
                          null)});
   </script>
-
-  <div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=358788324280939&version=v2.0";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-
   </body>
 </html>
