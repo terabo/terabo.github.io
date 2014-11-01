@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+  <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.7.0/build/reset/reset-min.css">
+  <link rel="stylesheet" type="text/css" href="css/inbox.css" />
+  <link rel="stylesheet" type="text/css" href="css/jquery.autocomplete.css" />
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/jquery.autocomplete.js"></script>
+  <script type="text/javascript" src="js/jquery.timers-1.1.2.js"></script>
+  <script type="text/javascript" src="js/inbox.js"></script>
+  <title>Teraboxx</title>
+</head>
+<body>
+  <script src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php" type="text/javascript"></script>
+  <div id="content">
+    <div id="header"><img src="header.png" /></div>
+    <div id="login"><div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div></div>
+    <div id="controls" style="display: none;">
+      <div id="search">
+        <input id="searchbox" type="search" results="5"/>
+        <button id="searchbutton" type='button' onclick="searchThreads();">Search</button>
+      </div>
+      <div id="filters">Show:
+        <a id="showall" class="selected">all</a>,
+        <a id="showunread">unread</a>,
+        <a id="showread">read</a>
+      </div>
+      <div id="folders">Folder:
+        <a id="showinbox" class="folder_selected">inbox
+          <span class="unread_count">(<span class="num"></span>)</span></a>,
+        <a id="showoutbox">outbox
+          <span class="unread_count">(<span class="num"></span>)</span></a>,
+        <a id="showupdates">updates
+          <span class="unread_count">(<span class="num"></span>)</span></a>
+      </div>
+      <div id="create_thread">
+        <a id="compose">Create thread</a>
+      </div>
+    </div>
+    <table id="inbox">
+    </table>
+    <div id="footer">A Ben Hiller Production (Works great in Safari, not as great in Firefox, probably doesn't work in IE)</div>
+  </div>
+  <script>
+    FB.init("d3e981967f4ba88d618e1395f9a81177", "xd_receiver.htm");
+    FB_RequireFeatures(["Connect", "Api", "XdComm"],
+                       function() {
+                         FB.Connect.ifUserConnected(
+                         login,
+                         null)});
+  </script>
+
+  <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=358788324280939&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+  </body>
+</html>
